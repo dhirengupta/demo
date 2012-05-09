@@ -1,0 +1,16 @@
+%p 
+  -@solr_response['docs'].each do |hit|
+    - puts hit
+    -id=hit["doc_id"].gsub("Vehicle","") 
+    -vehicle = Vehicle.find(id)
+    %b Id: 
+    =id
+    |
+    %b Model :
+    =vehicle.model
+    |
+    %b Distance :
+    -d= "%0.2f" % hit["distance"].to_f
+    =d
+    Km
+    %br
