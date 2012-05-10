@@ -6,12 +6,13 @@ class VehiclesController < ApplicationController
         #solr_para[:pt] = "#{params[:lat]},#{params[:lng]}"
         solr_para[:pt] = "40.66,-111.88"
         #solr_para[:pt] = "37.08,-113.58"
-        solr_para[:sort] = 'geodist() asc'
+        #solr_para[:sort] = 'geodist() asc'
+        solr_para[:sort] = 'price_f asc' # for price sorting, since solr store the field as price_f, you need to give it this way
         solr_para[:fq] << '{!geofilt}'
         solr_para[:fl] = 'distance:geodist() AND doc_id:id'
         solr_para[:d] = '5'
       end
-      paginate :page => 1, :per_page => 1000
+      paginate :page => 1, :per_page => 10
     end
     @solr_response = result.monkey_response
   end
