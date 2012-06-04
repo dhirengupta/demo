@@ -100,6 +100,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
@@ -111,3 +112,4 @@ DEPENDENCIES
   rails (= 3.0.9)
   sunspot_rails!
   sunspot_solr
+  will_paginate

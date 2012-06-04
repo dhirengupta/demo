@@ -10,6 +10,7 @@ gem 'sunspot_rails', :git => "git://github.com/sunspot/sunspot.git"
 gem 'sunspot_solr'
 gem 'progress_bar'
 gem 'haml-rails'
+gem 'will_paginate'
 
 
 # Use unicorn as the web server
